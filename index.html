@@ -428,6 +428,12 @@
   footer .admin-link{
     background:none;border:none;color:#9FC3BC;text-decoration:underline;cursor:pointer;font-size:13px;font-family:inherit;
   }
+  .visit-count{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:10px;font-size:12px;color:#9FC3BC;
+  }
+  .visit-count svg{width:14px;height:14px;}
+
   /* ---------- Admin modal ---------- */
   .modal-overlay{
     position:fixed;inset:0;background:rgba(24,29,28,0.55);
@@ -688,6 +694,9 @@
   <div class="wrap">
     <p>© सेतू कार्यालय शिबलापूर, संगमनेर — सर्व माहिती केवळ सामान्य मार्गदर्शनासाठी. अंतिम पडताळणीसाठी केंद्रावर संपर्क साधा.</p>
     <p style="font-size:12px;">जय हिंद 🇮🇳 — नागरिकांची सेवा हीच आमची उपासना</p>
+    <div class="visit-count" id="visitCount">
+      <img src="https://visitor-badge.laobi.icu/badge?page_id=setu-karyalay-shiblapur&left_text=एकूण%20भेटी" alt="एकूण भेटी" style="height:20px;border-radius:4px;">
+    </div>
     <button class="admin-link" id="openAdmin">प्रशासक प्रवेश</button>
   </div>
 </footer>
