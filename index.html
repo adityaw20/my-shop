@@ -1,11 +1,1186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My shop </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सेतू कार्यालय शिबलापूर | शासकीय दाखले, योजना व सुविधा</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EC;
+    --paper:#FFFDF8;
+    --teal:#0E4F4A;
+    --teal-dark:#0A3B37;
+    --saffron:#DE8A3C;
+    --saffron-dark:#C36F22;
+    --leaf:#3C7A54;
+    --leaf-dark:#2C5D40;
+    --plum:#7A4A6E;
+    --whatsapp:#25D366;
+    --whatsapp-dark:#1DA851;
+    --ink:#24211C;
+    --ink-soft:#5B564C;
+    --line:#E4D9C2;
+    --line-strong:#D2C4A3;
+    --danger:#B3432F;
+    --font-display:'Tiro Devanagari Marathi', serif;
+    --font-body:'Noto Sans Devanagari', sans-serif;
+    --shadow:0 2px 10px rgba(36,33,28,0.08);
+    --shadow-lg:0 12px 32px rgba(14,79,74,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:18px;
+    line-height:1.6;
+  }
+  img,svg{display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;margin:0;color:var(--teal-dark);}
+  .icon{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  :focus-visible{outline:3px solid var(--saffron);outline-offset:2px;}
+
+  /* ---------- Reveal-on-scroll ---------- */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .reveal-stagger.in > *{opacity:1;transform:translateY(0);}
+  .reveal-stagger > *{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease;}
+  .reveal-stagger.in > *:nth-child(1){transition-delay:.03s;}
+  .reveal-stagger.in > *:nth-child(2){transition-delay:.09s;}
+  .reveal-stagger.in > *:nth-child(3){transition-delay:.15s;}
+  .reveal-stagger.in > *:nth-child(4){transition-delay:.21s;}
+  .reveal-stagger.in > *:nth-child(5){transition-delay:.27s;}
+  .reveal-stagger.in > *:nth-child(6){transition-delay:.33s;}
+  .reveal-stagger.in > *:nth-child(n+7){transition-delay:.38s;}
+
+  /* ---------- Top announcement bar ---------- */
+  .topbar{
+    background:linear-gradient(90deg,var(--teal-dark),var(--teal) 50%,var(--leaf-dark));
+    color:#EFF7F4;text-align:center;padding:7px 16px;
+    font-size:12.5px;font-weight:600;letter-spacing:.01em;
+  }
+  .topbar strong{color:#F4C892;}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:40;
+    background:var(--teal);
+    color:#fff;
+    border-bottom:4px solid var(--saffron);
+  }
+  .header-inner{
+    max-width:1080px;margin:0 auto;padding:12px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:44px;height:44px;border-radius:50%;
+    background:#fff;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;overflow:hidden;padding:6px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  .brand-mark img{width:100%;height:100%;object-fit:contain;}
+  .brand-text h1{color:#fff;font-size:20px;line-height:1.25;}
+  .brand-text p{margin:2px 0 0;font-size:13px;color:#CFE3E0;font-family:var(--font-body);}
+  .header-actions{display:flex;gap:8px;}
+  .call-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--saffron);color:#fff;
+    padding:10px 16px;border-radius:999px;
+    font-weight:600;font-size:15px;text-decoration:none;
+    white-space:nowrap;
+    box-shadow:0 3px 0 var(--saffron-dark);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .call-btn:hover{transform:translateY(-1px);}
+  .call-btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--saffron-dark);}
+  .call-btn .icon{width:18px;height:18px;}
+  .wa-header-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--whatsapp);color:#fff;
+    padding:10px 14px;border-radius:999px;
+    font-weight:600;font-size:15px;text-decoration:none;
+    white-space:nowrap;
+    box-shadow:0 3px 0 var(--whatsapp-dark);
+    transition:transform .15s ease;
+  }
+  .wa-header-btn:hover{transform:translateY(-1px);}
+  .wa-header-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  /* ---------- Sub nav ---------- */
+  .subnav{
+    position:sticky;top:69px;z-index:35;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    overflow-x:auto;
+    -ms-overflow-style:none;scrollbar-width:none;
+  }
+  .subnav::-webkit-scrollbar{display:none;}
+  .subnav-inner{
+    max-width:1080px;margin:0 auto;padding:10px 20px;
+    display:flex;gap:22px;white-space:nowrap;
+  }
+  .subnav a{
+    font-size:14.5px;font-weight:600;color:var(--ink-soft);text-decoration:none;
+    padding:4px 2px;border-bottom:2px solid transparent;
+  }
+  .subnav a:hover{color:var(--teal-dark);border-bottom-color:var(--saffron);}
+
+  /* ---------- WhatsApp CTA (shared) ---------- */
+  .wa-btn{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(37,211,102,0.10);color:var(--whatsapp-dark);
+    border:1px solid rgba(37,211,102,0.35);
+    padding:8px 14px;border-radius:8px;
+    font-size:13.5px;font-weight:700;text-decoration:none;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .wa-btn:hover{background:var(--whatsapp);color:#fff;border-color:var(--whatsapp);}
+  .wa-btn svg{width:16px;height:16px;}
+
+  /* ---------- Floating WhatsApp ---------- */
+  .float-wa{
+    position:fixed;bottom:22px;right:22px;z-index:90;
+    width:56px;height:56px;border-radius:50%;
+    background:var(--whatsapp);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(37,211,102,0.5);
+    animation:wa-pulse 2.4s ease infinite;
+    text-decoration:none;
+  }
+  .float-wa svg{width:28px;height:28px;color:#fff;}
+  .float-wa:hover{transform:scale(1.08);}
+  @keyframes wa-pulse{
+    0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.45);}
+    50%{box-shadow:0 6px 28px rgba(37,211,102,0.7), 0 0 0 8px rgba(37,211,102,0.12);}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--teal) 0%, var(--teal) 68%, var(--cream) 68%);
+    padding:24px 0 0;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;top:-140px;right:-120px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle, rgba(222,138,60,0.22) 0%, rgba(222,138,60,0) 70%);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";position:absolute;top:60px;left:-160px;width:320px;height:320px;border-radius:50%;
+    background:radial-gradient(circle, rgba(124,217,168,0.16) 0%, rgba(124,217,168,0) 70%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1;}
+
+  .trust-bar{
+    display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;
+    background:rgba(255,255,255,0.96);border-radius:12px;
+    padding:10px 18px;margin-bottom:20px;box-shadow:0 6px 18px rgba(10,59,55,0.25);
+    animation:fadeUp .6s ease both;
+  }
+  .trust-item{display:flex;align-items:center;gap:9px;}
+  .trust-item img{height:34px;width:auto;display:block;}
+  .trust-item span{font-size:13px;font-weight:700;color:var(--teal-dark);line-height:1.25;max-width:120px;}
+  .trust-divider{width:1px;align-self:stretch;background:var(--line-strong);min-height:28px;}
+
+  .hero-label{
+    color:#CFE3E0;font-size:14px;letter-spacing:.02em;margin:0 0 6px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .hero-label .dot{width:8px;height:8px;border-radius:50%;background:#7CD9A8;box-shadow:0 0 0 4px rgba(124,217,168,0.25);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.45;}}
+  .hero-title{color:#fff;font-size:28px;margin-bottom:12px;max-width:660px;animation:fadeUp .7s ease .05s both;}
+  .hero-sub{color:#CFE3E0;font-size:15.5px;max-width:600px;margin:0 0 20px;animation:fadeUp .7s ease .08s both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .carousel{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+    min-height:190px;
+    animation:fadeUp .7s ease .1s both;
+  }
+  .carousel-track{position:relative;min-height:190px;}
+  .scheme-slide{
+    position:absolute;inset:0;
+    padding:22px 24px 20px;
+    opacity:0;visibility:hidden;
+    transform:translateX(12px);
+    transition:opacity .45s ease, transform .45s ease, visibility .45s;
+    display:flex;flex-direction:column;gap:8px;justify-content:center;
+  }
+  .scheme-slide.active{opacity:1;visibility:visible;transform:translateX(0);position:relative;}
+  .scheme-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .scheme-tag{
+    font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px;
+    background:rgba(60,122,84,0.12);color:var(--leaf-dark);
+  }
+  .scheme-tag.new{background:rgba(222,138,60,0.15);color:var(--saffron-dark);}
+  .scheme-date{font-size:12.5px;color:var(--ink-soft);}
+  .scheme-slide h3{font-size:21px;margin-top:2px;}
+  .scheme-slide p{margin:0;color:var(--ink-soft);font-size:15.5px;max-width:640px;}
+  .carousel-nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 16px 14px;border-top:1px solid var(--line);
+    background:var(--paper);
+  }
+  .carousel-dots{display:flex;gap:7px;}
+  .carousel-dots button{
+    width:8px;height:8px;border-radius:50%;border:none;background:var(--line-strong);
+    padding:0;cursor:pointer;transition:width .2s ease, background .2s ease;
+  }
+  .carousel-dots button.active{background:var(--teal);width:22px;border-radius:5px;}
+  .carousel-arrows{display:flex;gap:8px;}
+  .arrow-btn{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--line-strong);
+    background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--teal-dark);
+    transition:background .15s ease, transform .15s ease;
+  }
+  .arrow-btn:hover{background:var(--cream);transform:scale(1.06);}
+
+  .stats-strip{
+    display:flex;flex-wrap:wrap;gap:0;
+    margin-top:18px;
+    border-top:1px solid rgba(255,255,255,0.18);
+  }
+  .stat{
+    flex:1 1 130px;padding:16px 4px 26px;
+    border-right:1px solid rgba(255,255,255,0.18);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{color:#fff;font-family:var(--font-display);font-size:26px;display:block;}
+  .stat .lbl{color:#BFDAD5;font-size:12.5px;margin-top:2px;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:44px 0;}
+  .section-head{margin-bottom:22px;max-width:640px;}
+  .section-head .kicker{
+    color:var(--saffron-dark);font-weight:700;font-size:14px;margin:0 0 4px;
+  }
+  .section-head h2{font-size:26px;}
+  .section-head p{color:var(--ink-soft);margin:8px 0 0;font-size:15.5px;}
+
+  /* ---------- Services ---------- */
+  .service-tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
+  .search-box{
+    flex:1 1 240px;display:flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line-strong);border-radius:10px;padding:10px 14px;
+  }
+  .search-box input{border:none;outline:none;font:inherit;width:100%;background:transparent;color:var(--ink);}
+  .search-box .icon{color:var(--ink-soft);}
+  .chip{
+    border:1px solid var(--line-strong);background:#fff;color:var(--ink-soft);
+    padding:9px 15px;border-radius:999px;font-size:14.5px;cursor:pointer;font-weight:600;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .chip.active{background:var(--teal);border-color:var(--teal);color:#fff;}
+  .chip:hover:not(.active){border-color:var(--teal);color:var(--teal-dark);}
+
+  .cat-block{margin-bottom:30px;}
+  .cat-block h3{
+    font-size:19px;color:var(--teal-dark);
+    display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .cat-block h3::before{content:"";width:6px;height:22px;background:var(--saffron);border-radius:3px;flex-shrink:0;}
+
+  .service-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .service-card:hover{border-color:var(--line-strong);box-shadow:var(--shadow);}
+  .service-summary{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:15px 18px;cursor:pointer;list-style:none;
+  }
+  .service-summary::-webkit-details-marker{display:none;}
+  .service-summary-left{display:flex;align-items:center;gap:12px;}
+  .service-index{
+    width:30px;height:30px;border-radius:50%;background:rgba(14,79,74,0.08);color:var(--teal-dark);
+    display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;flex-shrink:0;
+  }
+  .service-name{font-size:16.5px;font-weight:600;}
+  .doc-count{font-size:13px;color:var(--ink-soft);white-space:nowrap;}
+  .chevron{transition:transform .3s ease;color:var(--ink-soft);}
+  details[open] .chevron{transform:rotate(180deg);}
+  .service-body{padding:0 18px 18px 60px;}
+  .doc-list{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:8px;}
+  .doc-list li{
+    display:flex;align-items:flex-start;gap:9px;font-size:15px;color:var(--ink);
+  }
+  .doc-list li svg{color:var(--leaf);margin-top:3px;}
+  .service-note{font-size:14.5px;color:var(--ink-soft);background:var(--cream);border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px;margin-bottom:14px;}
+  .no-results{color:var(--ink-soft);font-size:15px;padding:20px 4px;}
+
+  .verify-note{
+    background:#EEF3EC;border:1px solid #D3E2CE;border-left:5px solid var(--leaf);
+    border-radius:10px;padding:16px 18px;margin-top:18px;font-size:14.5px;color:var(--ink);
+  }
+  .verify-note strong{color:var(--leaf-dark);font-family:var(--font-display);font-size:16px;display:block;margin-bottom:6px;font-weight:400;}
+
+  /* ---------- Facility / bank grids ---------- */
+  .facility-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+  .facility-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;
+    display:flex;flex-direction:column;gap:10px;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .facility-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--line-strong);}
+  .facility-icon{
+    width:44px;height:44px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(14,79,74,0.08);color:var(--teal);
+  }
+  .facility-card:nth-child(3n+2) .facility-icon{background:rgba(222,138,60,0.12);color:var(--saffron-dark);}
+  .facility-card:nth-child(3n+3) .facility-icon{background:rgba(122,74,110,0.10);color:var(--plum);}
+  .facility-card h4{font-size:16.5px;font-weight:600;color:var(--ink);font-family:var(--font-body);}
+  .facility-card p{margin:0;font-size:14.5px;color:var(--ink-soft);flex:1;}
+
+  .bank-section{background:var(--paper);}
+  .bank-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .bank-card{
+    border:1px solid var(--line);border-radius:12px;padding:20px;background:#fff;
+    display:flex;flex-direction:column;gap:10px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .bank-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+  .bank-card .bank-top{display:flex;align-items:center;gap:10px;}
+  .bank-mark{
+    width:38px;height:38px;border-radius:8px;background:var(--teal);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:17px;flex-shrink:0;
+  }
+  .bank-card h4{font-size:16.5px;font-family:var(--font-body);font-weight:700;color:var(--ink);}
+  .bank-list{margin:0;padding-left:20px;font-size:14.5px;color:var(--ink-soft);display:grid;gap:4px;flex:1;}
+  .bank-card p.bank-desc{margin:0;font-size:14.5px;color:var(--ink-soft);flex:1;}
+
+  /* ---------- Person / contact cards ---------- */
+  .person-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:22px;}
+  .person-card{
+    background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);
+    border-radius:14px;padding:22px;text-align:center;
+  }
+  .person-avatar{
+    width:56px;height:56px;border-radius:50%;background:var(--saffron);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+    color:#fff;font-family:var(--font-display);font-size:22px;
+  }
+  .person-card h4{color:#fff;font-size:18px;font-family:var(--font-body);font-weight:700;}
+  .person-role{color:#F0B77E;font-size:12.5px;font-weight:600;margin:3px 0 14px;}
+  .person-phone{color:#fff;font-family:var(--font-display);font-size:19px;letter-spacing:.03em;margin-bottom:14px;}
+  .person-btns{display:flex;flex-direction:column;gap:8px;}
+  .person-btns a{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:10px 14px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;
+  }
+  .person-btns .p-wa{background:var(--whatsapp);color:#fff;}
+  .person-btns .p-wa:hover{background:var(--whatsapp-dark);}
+  .person-btns .p-call{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.25);}
+  .person-btns .p-call:hover{background:rgba(255,255,255,0.2);}
+  .person-btns svg{width:16px;height:16px;}
+
+  /* ---------- Location ---------- */
+  .location{background:var(--teal-dark);color:#fff;}
+  .location .section-head h2{color:#fff;}
+  .location .section-head p{color:#C9DEDA;}
+  .location .section-head .kicker{color:#F0B77E;}
+  .loc-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:stretch;}
+  .map-frame{
+    border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.15);min-height:280px;
+  }
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block;background:#fff;}
+  .contact-card{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+    border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:16px;
+  }
+  .contact-row{display:flex;gap:12px;align-items:flex-start;}
+  .contact-row .icon{color:var(--saffron);margin-top:2px;}
+  .contact-row div{font-size:15px;line-height:1.55;}
+  .contact-row .label{display:block;font-size:12.5px;color:#B9D2CD;margin-bottom:2px;}
+  .contact-row a{text-decoration:none;font-weight:600;}
+  .directions-btn{
+    align-self:flex-start;margin-top:4px;
+    display:flex;align-items:center;gap:8px;
+    background:var(--saffron);color:#fff;padding:11px 18px;border-radius:8px;font-weight:700;text-decoration:none;font-size:15px;
+    transition:transform .15s ease;
+  }
+  .directions-btn:hover{transform:translateY(-2px);}
+
+  /* ---------- Footer ---------- */
+  .footer-strip{height:4px;background:linear-gradient(90deg,var(--saffron) 33.3%,#fff 33.3%,#fff 66.6%,var(--leaf) 66.6%);}
+  footer{padding:26px 0;text-align:center;font-size:13px;color:var(--ink-soft);background:var(--teal-dark);color:#BFDAD5;}
+  footer p{margin:4px 0;}
+  footer .admin-link{
+    background:none;border:none;color:#9FC3BC;text-decoration:underline;cursor:pointer;font-size:13px;font-family:inherit;
+  }
+  .visit-count{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:10px;font-size:12px;color:#9FC3BC;
+  }
+  .visit-count svg{width:14px;height:14px;}
+
+  /* ---------- Admin modal ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(24,29,28,0.55);
+    display:none;align-items:center;justify-content:center;padding:20px;z-index:100;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:#fff;border-radius:14px;max-width:560px;width:100%;
+    max-height:88vh;overflow-y:auto;padding:26px;box-shadow:var(--shadow-lg);
+  }
+  .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+  .modal-head h3{font-size:20px;}
+  .modal-close{background:none;border:none;cursor:pointer;color:var(--ink-soft);}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px;color:var(--ink-soft);}
+  .field input, .field textarea{
+    width:100%;padding:10px 12px;border:1px solid var(--line-strong);border-radius:8px;font:inherit;
+  }
+  .field textarea{min-height:70px;resize:vertical;}
+  .btn{
+    padding:10px 18px;border-radius:8px;border:none;font-weight:700;font-size:14.5px;cursor:pointer;font-family:inherit;
+  }
+  .btn-primary{background:var(--teal);color:#fff;}
+  .btn-ghost{background:var(--cream);color:var(--ink);border:1px solid var(--line-strong);}
+  .btn-danger{background:transparent;color:var(--danger);}
+  .admin-scheme-row{
+    display:flex;justify-content:space-between;gap:10px;align-items:center;
+    padding:10px 0;border-bottom:1px solid var(--line);
+  }
+  .admin-scheme-row .info{font-size:14px;}
+  .admin-scheme-row .info b{display:block;font-size:15px;}
+  .admin-scheme-row .actions{display:flex;gap:6px;flex-shrink:0;}
+  .admin-scheme-row .actions button{padding:6px 10px;font-size:12.5px;}
+  .toggle-active{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:14px;}
+  .status-msg{font-size:13.5px;margin-top:10px;padding:8px 10px;border-radius:8px;}
+  .status-msg.ok{background:#EAF3EC;color:var(--leaf-dark);}
+  .status-msg.err{background:#FBEAE6;color:var(--danger);}
+  hr.divider{border:none;border-top:1px solid var(--line);margin:18px 0;}
+
+  @media (max-width:760px){
+    body{font-size:16.5px;}
+    .brand-text h1{font-size:17px;}
+    .brand-text p{font-size:12px;}
+    .hero-title{font-size:21px;}
+    .loc-grid{grid-template-columns:1fr;}
+    .map-frame{min-height:220px;}
+    .map-frame iframe{min-height:220px;}
+    .service-body{padding:0 14px 16px 14px;}
+    .subnav{top:64px;}
+    .trust-bar{padding:8px 14px;gap:12px;}
+    .trust-item img{height:26px;}
+    .trust-item span{font-size:11.5px;max-width:100px;}
+    .hero::before,.hero::after{display:none;}
+    .call-btn span.txt{display:none;}
+  }
+</style>
 </head>
 <body>
-    hello frinds 
+
+<div class="topbar">📢 सेतू कार्यालय शिबलापूर | <strong>सोमवार ते शनिवार</strong> | सकाळी ९:०० ते सायं ७:००</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark"><img src="assets/maha-eseva-logo.png" alt="महा ई-सेवा केंद्र चिन्ह"></div>
+      <div class="brand-text">
+        <h1>सेतू कार्यालय, शिबलापूर</h1>
+        <p>महा-ई-सेवा केंद्र | शासकीय दाखले, योजना व इतर सुविधा</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a class="call-btn" href="tel:9822515454">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="txt">कॉल करा</span>
+      </a>
+    </div>
+  </div>
+  <nav class="subnav">
+    <div class="subnav-inner">
+      <a href="#services">दाखले व प्रमाणपत्रे</a>
+      <a href="#banking">बँकिंग सेवा</a>
+      <a href="#facilities">इतर सुविधा</a>
+      <a href="#location">पत्ता व संपर्क</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="trust-bar">
+      <div class="trust-item">
+        <img src="assets/maha-eseva-logo.png" alt="महा ई-सेवा केंद्र">
+        <span>महा ई-सेवा केंद्र</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <img src="assets/aaple-sarkar-logo.png" alt="आपले सरकार">
+        <span>आपले सरकार मान्यताप्राप्त</span>
+      </div>
+    </div>
+    <p class="hero-label"><span class="dot"></span> सक्रिय शासकीय योजना</p>
+    <h2 class="hero-title">शासकीय दाखले, योजना व बँकिंग सुविधा — एकाच ठिकाणी</h2>
+    <p class="hero-sub">आधार, जात प्रमाणपत्र, उत्पन्न दाखला, सातबारा, रेशन कार्ड, विवाह नोंदणी, बँकिंग व सरकारी योजना अर्ज — सर्व सेवा शिबलापूर सेतू कार्यालयातून.</p>
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carouselTrack"></div>
+      <div class="carousel-nav">
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-arrows">
+          <button class="arrow-btn" id="prevBtn" aria-label="मागील योजना">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="arrow-btn" id="nextBtn" aria-label="पुढील योजना">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat"><span class="num" data-count="30">0</span><span class="lbl">प्रकारचे दाखले व प्रमाणपत्र</span></div>
+      <div class="stat"><span class="num" data-count="7">0</span><span class="lbl">बँकिंग व CSC सुविधा</span></div>
+      <div class="stat"><span class="num" data-count="10">0</span><span class="lbl">कार्यालयीन सुविधा</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">उपलब्ध सेवा</p>
+      <h2>सर्व शासकीय दाखले व त्यासाठी लागणारी कागदपत्रे</h2>
+      <p>आपल्याला हवा असलेला दाखला शोधा — कोणती कागदपत्रे सोबत आणायची ते खाली दिसेल, आणि थेट WhatsApp वर विचारता येईल.</p>
+    </div>
+
+    <div class="service-tools reveal">
+      <div class="search-box">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="serviceSearch" placeholder="उदा. जात प्रमाणपत्र, आधार, सातबारा...">
+      </div>
+    </div>
+
+    <div class="chip-row reveal" id="categoryChips" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;"></div>
+
+    <div id="serviceCategories"></div>
+    <p class="no-results" id="noResults" style="display:none;">आपल्या शोधाशी जुळणारी कोणतीही सेवा सापडली नाही. कृपया वेगळा शब्द वापरून पहा किंवा केंद्रावर संपर्क साधा.</p>
+
+    <div class="verify-note reveal">
+      <strong>जातपडताळणी साठी लागणारे कागदपत्रे</strong>
+      शाळेचा बोनाफाईड, वडिलांचा शाळेचा दाखला, आजोबा/चुलत आजोबा/चुलते यांचा शाळेचा किंवा जन्माचा दाखला (SC/ST साठी सन १९५० पूर्वीचा, NT साठी १९६० पूर्वीचा, OBC साठी १९६७ पूर्वीचा पुरावा), घरातील एखाद्याची जात पडताळणी, ७/१२ फेरफार उतारे, आधार कार्ड, मोबाईल नंबर, ई-मेल आयडी, अर्जदाराचा पासपोर्ट साईज फोटो, वडिलांचा पासपोर्ट साईज फोटो.
+    </div>
+  </div>
+</section>
+
+<section id="banking" class="bank-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">बँकिंग व CSC सेवा</p>
+      <h2>बीसी पॉईंट व डिजिटल आर्थिक सुविधा</h2>
+      <p>बँकेत न जाता केंद्रावरच जमा, पैसे काढणे, नवीन खाते, विमा व डिजिटल पेमेंट.</p>
+    </div>
+    <div class="bank-grid reveal-stagger" id="bankGrid"></div>
+  </div>
+</section>
+
+<section id="facilities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">इतर सुविधा</p>
+      <h2>कार्यालयीन व लेखनविषयक सुविधा</h2>
+      <p>दाखल्यांशिवाय केंद्रावर या रोजच्या उपयोगाच्या सुविधाही उपलब्ध आहेत.</p>
+    </div>
+    <div class="facility-grid reveal-stagger" id="facilityGrid"></div>
+  </div>
+</section>
+
+<section id="location" class="location">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">केंद्राला भेट द्या</p>
+      <h2>आमचा पत्ता व संपर्क</h2>
+      <p>दाखल्यासाठी लागणारी सर्व मूळ व झेरॉक्स कागदपत्रे सोबत घेऊन केंद्रावर या.</p>
+    </div>
+
+    <div class="person-grid reveal-stagger">
+      <div class="person-card">
+        <div class="person-avatar">न</div>
+        <h4>नंदकुमार वालझाडे</h4>
+        <p class="person-role">सेतू कार्यालय — प्रमुख</p>
+        <p class="person-phone">९८२२५ १५४५४</p>
+        <div class="person-btns">
+          <a class="p-wa" href="https://wa.me/919822515454?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%BE%E0%A4%B0%20%E0%A4%A8%E0%A4%82%E0%A4%A6%E0%A4%95%E0%A5%81%E0%A4%AE%E0%A4%BE%E0%A4%B0%20%E0%A4%9C%E0%A5%80%2C%20%E0%A4%AE%E0%A4%B2%E0%A4%BE%20%E0%A4%B8%E0%A5%87%E0%A4%A4%E0%A5%82%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%20%E0%A4%B8%E0%A5%87%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%A6%E0%A5%8D%E0%A4%A6%E0%A4%B2%20%E0%A4%AE%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%80%20%E0%A4%B9%E0%A4%B5%E0%A5%80%20%E0%A4%86%E0%A4%B9%E0%A5%87." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.24-1.37a9.94 9.94 0 0 0 4.8 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.41a8.17 8.17 0 0 1 2.42 5.82c0 4.53-3.69 8.23-8.19 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31s-.88.86-.88 2.1.9 2.43 1.03 2.6c.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+            WhatsApp करा
+          </a>
+          <a class="p-call" href="tel:9822515454">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            कॉल करा
+          </a>
+        </div>
+      </div>
+      <div class="person-card">
+        <div class="person-avatar">ह</div>
+        <h4>हरिभाऊ वालझाडे</h4>
+        <p class="person-role">सेतू कार्यालय — सह-संचालक</p>
+        <p class="person-phone">९७६३० ९५६३६</p>
+        <div class="person-btns">
+          <a class="p-wa" href="https://wa.me/919763095636?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%BE%E0%A4%B0%20%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%AD%E0%A4%BE%E0%A4%8A%20%E0%A4%9C%E0%A5%80%2C%20%E0%A4%AE%E0%A4%B2%E0%A4%BE%20%E0%A4%B8%E0%A5%87%E0%A4%A4%E0%A5%82%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%20%E0%A4%B8%E0%A5%87%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%A6%E0%A5%8D%E0%A4%A6%E0%A4%B2%20%E0%A4%AE%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%80%20%E0%A4%B9%E0%A4%B5%E0%A5%80%20%E0%A4%86%E0%A4%B9%E0%A5%87." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.24-1.37a9.94 9.94 0 0 0 4.8 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.41a8.17 8.17 0 0 1 2.42 5.82c0 4.53-3.69 8.23-8.19 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31s-.88.86-.88 2.1.9 2.43 1.03 2.6c.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+            WhatsApp करा
+          </a>
+          <a class="p-call" href="tel:9763095636">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            कॉल करा
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="loc-grid reveal">
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.0084292097289!2d74.35942315337428!3d19.49400499050951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcfbaf7373a981%3A0xefa65a87b0a60ff1!2sNew%20Setu%20office!5e1!3m2!1sen!2sin!4v1788425008559!5m2!1sen!2sin" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="सेतू कार्यालय शिबलापूर नकाशा"></iframe>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <span class="label">पत्ता</span>
+            सेतू कार्यालय शिबलापूर, प्राथमिक आरोग्य केंद्र शेजारी, संगमनेर-शिबलापूर रोड, शिबलापूर, ता. संगमनेर, जि. अहमदनगर
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/></svg>
+          <div>
+            <span class="label">कार्यालयीन वेळ</span>
+            सोमवार ते शनिवार, सकाळी ९:०० ते सायं ७:००
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <div>
+            <span class="label">ईमेल</span>
+            <a href="mailto:nanduwalzade@mail.com">nanduwalzade@mail.com</a><br>
+            <a href="mailto:harishwalzade@gmail.com">harishwalzade@gmail.com</a>
+          </div>
+        </div>
+        <a class="directions-btn" href="https://www.google.com/maps/dir/?api=1&destination=Shiblapur,Sangamner,Maharashtra" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" style="color:#fff;"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          दिशा मिळवा
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-strip"></div>
+<footer>
+  <div class="wrap">
+    <p>© सेतू कार्यालय शिबलापूर, संगमनेर — सर्व माहिती केवळ सामान्य मार्गदर्शनासाठी. अंतिम पडताळणीसाठी केंद्रावर संपर्क साधा.</p>
+    <p style="font-size:12px;">जय हिंद 🇮🇳 — नागरिकांची सेवा हीच आमची उपासना</p>
+    <div class="visit-count" id="visitCount">
+      <img src="https://visitor-badge.laobi.icu/badge?page_id=setu-karyalay-shiblapur&left_text=एकूण%20भेटी" alt="एकूण भेटी" style="height:20px;border-radius:4px;">
+    </div>
+    <button class="admin-link" id="openAdmin">प्रशासक प्रवेश</button>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/919822515454?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%BE%E0%A4%B0%20%E0%A4%B8%E0%A5%87%E0%A4%A4%E0%A5%82%20%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%B2%E0%A4%AF%2C%20%E0%A4%AE%E0%A4%B2%E0%A4%BE%20%E0%A4%AE%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%80%20%E0%A4%B9%E0%A4%B5%E0%A5%80%20%E0%A4%86%E0%A4%B9%E0%A5%87." target="_blank" rel="noopener" aria-label="WhatsApp वर संपर्क करा" title="WhatsApp वर संपर्क करा">
+  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.24-1.37a9.94 9.94 0 0 0 4.8 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.41a8.17 8.17 0 0 1 2.42 5.82c0 4.53-3.69 8.23-8.19 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31s-.88.86-.88 2.1.9 2.43 1.03 2.6c.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+</a>
+
+<!-- Admin modal -->
+<div class="modal-overlay" id="adminOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="adminModalTitle">प्रशासक प्रवेश</h3>
+      <button class="modal-close" id="closeAdmin" aria-label="बंद करा">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div id="loginPane">
+      <div class="field">
+        <label for="adminPass">पासवर्ड टाका</label>
+        <input type="password" id="adminPass" placeholder="••••••••">
+      </div>
+      <button class="btn btn-primary" id="loginBtn">प्रवेश करा</button>
+      <div id="loginMsg"></div>
+    </div>
+
+    <div id="adminPane" style="display:none;">
+      <p style="font-size:14px;color:var(--ink-soft);margin-top:0;">येथून होम पेजवरील "सक्रिय शासकीय योजना" यादी अद्ययावत करा.</p>
+
+      <form id="schemeForm">
+        <input type="hidden" id="editId">
+        <div class="field">
+          <label for="schemeTitle">योजनेचे नाव</label>
+          <input type="text" id="schemeTitle" required placeholder="उदा. मुख्यमंत्री लाडकी बहीण योजना">
+        </div>
+        <div class="field">
+          <label for="schemeDesc">थोडक्यात माहिती</label>
+          <textarea id="schemeDesc" placeholder="योजनेबद्दल २-३ ओळींत माहिती लिहा"></textarea>
+        </div>
+        <div class="field">
+          <label for="schemeTagText">टॅग (उदा. नवीन, सुरू आहे, अंतिम तारीख जवळ)</label>
+          <input type="text" id="schemeTagText" placeholder="नवीन">
+        </div>
+        <div class="toggle-active">
+          <input type="checkbox" id="schemeActive" checked>
+          <label for="schemeActive" style="margin:0;">होम पेजवर दाखवा (सक्रिय)</label>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <button type="submit" class="btn btn-primary" id="saveSchemeBtn">योजना जतन करा</button>
+          <button type="button" class="btn btn-ghost" id="clearFormBtn">फॉर्म रिकामा करा</button>
+        </div>
+      </form>
+      <div id="saveMsg"></div>
+
+      <hr class="divider">
+      <h3 style="font-size:16px;margin-bottom:8px;">सध्याच्या योजना</h3>
+      <div id="adminSchemeList"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------------- Config ---------------- */
+const ADMIN_PASSWORD = "setu@2026"; // NOTE: client-side only, change before real use
+const STORAGE_KEY = "shiblapur_schemes_v1";
+const WA_MAIN = "919822515454";
+const WA_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.24-1.37a9.94 9.94 0 0 0 4.8 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.41a8.17 8.17 0 0 1 2.42 5.82c0 4.53-3.69 8.23-8.19 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31s-.88.86-.88 2.1.9 2.43 1.03 2.6c.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>';
+function waLink(text){ return `https://wa.me/${WA_MAIN}?text=${encodeURIComponent(text)}`; }
+function waButton(label){ return `<a class="wa-btn" href="${waLink('नमस्कार, मला ' + label + ' साठी माहिती हवी आहे.')}" target="_blank" rel="noopener">${WA_ICON}WhatsApp वर विचारा</a>`; }
+
+/* ---------------- Default schemes (used if storage empty) ---------------- */
+const DEFAULT_SCHEMES = [
+  { id:"s1", title:"मुख्यमंत्री लाडकी बहीण योजना", desc:"पात्र महिलांना दरमहा आर्थिक सहाय्य. अर्जासाठी आधार कार्ड, रेशन कार्ड व बँक पासबुक आवश्यक.", tag:"सुरू आहे", active:true, date:"" },
+  { id:"s2", title:"आयुष्मान भारत — प्रधानमंत्री जन आरोग्य योजना", desc:"पात्र कुटुंबांना ५ लाखांपर्यंत मोफत आरोग्य विमा संरक्षण. आयुष्मान कार्डसाठी केंद्रावर नोंदणी करा.", tag:"नोंदणी सुरू", active:true, date:"" },
+  { id:"s3", title:"पीएम किसान सन्मान निधी", desc:"पात्र शेतकरी कुटुंबांना वार्षिक ६,००० रुपये थेट खात्यात. ई-केवायसी अद्ययावत असणे आवश्यक.", tag:"ई-केवायसी आवश्यक", active:true, date:"" }
+];
+
+/* ---------------- Services data ---------------- */
+const SERVICES = [
+  { category:"वास्तव्य व उत्पन्न दाखले", name:"१ वर्ष व ३ वर्ष उत्पन्न दाखला", docs:["विहित नमुन्यातील अर्ज","तलाठी उत्पन्न दाखला","रेशन कार्ड","७/१२ उतारा"] },
+  { category:"वास्तव्य व उत्पन्न दाखले", name:"डोमेसाईल प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","SSC मार्कशीट","शाळेचा दाखला / बोनाफाईड","रेशन कार्ड","आधार कार्ड"] },
+  { category:"वास्तव्य व उत्पन्न दाखले", name:"राष्ट्रीयत्व प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","डोमेसाईल प्रमाणपत्र","शाळेचा दाखला / बोनाफाईड","रेशन कार्ड","आधार कार्ड"] },
+  { category:"वास्तव्य व उत्पन्न दाखले", name:"डोंगरी प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","चालू शाळेचे बोनाफाईड","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+  { category:"वास्तव्य व उत्पन्न दाखले", name:"१५ वर्ष वास्तव्य प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","शाळेचा बोनाफाईड","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+
+  { category:"शेतकरी दाखले", name:"शेतकरी असल्याचे प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","शाळेचा दाखला","८अ प्रमाणे सर्व ७/१२ उतारे","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+  { category:"शेतकरी दाखले", name:"अल्पभूधारक प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","शाळेचा दाखला","तलाठी शेतकरी दाखला","८अ प्रमाणे सर्व ७/१२ उतारे","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+
+  { category:"जात व आरक्षण प्रमाणपत्रे", name:"जात प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","अर्जदाराचा शाळेचा दाखला","वडिलांचा शाळेचा दाखला","आजोबा / चुलत आजोबा / चुलते यांचा शाळेचा किंवा जन्माचा दाखला","SC/ST साठी सन १९५० पूर्वीचा, NT साठी १९६० पूर्वीचा, OBC साठी १९६७ पूर्वीचा पुरावा","८अ व ७/१२ उतारे","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+  { category:"जात व आरक्षण प्रमाणपत्रे", name:"कास्ट व्हॅलिडिटी (जात वैधता प्रमाणपत्र)", docs:["अर्जदाराचे मूळ जात प्रमाणपत्र (Caste Certificate)","अर्जदाराचे आधार कार्ड","अर्जदाराचा प्रवेश निर्गम उतारा — प्राथमिक शाळा किंवा टी.सी.","अर्जदाराचा प्रवेश निर्गम उतारा — माध्यमिक शाळा किंवा टी.सी.","अर्जदाराचे चालू वर्षाचे बोनाफाईड प्रमाणपत्र","अर्जदाराचा फोटो","अर्जदाराची व वडिलांची स्वाक्षरी","नमुना ३ बॉण्ड — वंशावळ व सातबारा शपथपत्र","नमुना १७ बॉण्ड — अर्जदाराचे शपथपत्र","फॉर्म १५ ए — महाविद्यालयातून भरून आणणे","वडिलांचा प्रवेश निर्गम उतारा — प्राथमिक शाळा किंवा टी.सी.","नातेवाईक / काकांचे टी.सी. (आवश्यक असल्यास)"] },
+  { category:"जात व आरक्षण प्रमाणपत्रे", name:"१०% EWS प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","अर्जदाराचा शाळेचा दाखला","वडिलांचा शाळेचा दाखला","तहसिलदार यांचा ३ वर्ष उत्पन्न दाखला","घराचा उतारा (क्षेत्रफळ १०० चौ.मी. पेक्षा कमी)","चालू घरपट्टी","८अ व ७/१२ उतारे (क्षेत्र ५ हेक्टर पेक्षा कमी)","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+  { category:"जात व आरक्षण प्रमाणपत्रे", name:"नॉन-क्रिमीलेयर प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","अर्जदाराचा शाळेचा दाखला","जातीचा दाखला","तहसिलदार यांचा ३ वर्ष उत्पन्न दाखला","८अ व ७/१२ उतारे","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+  { category:"जात व आरक्षण प्रमाणपत्रे", name:"महिला नॉन-क्रिमीलेयर प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","अर्जदाराचा शाळेचा दाखला","जातीचा दाखला","तहसिलदार यांचा ३ वर्ष उत्पन्न दाखला","उत्पन्नाबाबत प्रतिज्ञापत्र","३०% आरक्षण मिळणेबाबत प्रतिज्ञापत्र","८अ व ७/१२ उतारे","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड"] },
+  { category:"जात व आरक्षण प्रमाणपत्रे", name:"सेन्ट्रल ओ.बी.सी. प्रमाणपत्र", docs:["विहित नमुन्यातील अर्ज","अर्जदाराचा शाळेचा दाखला","जातीचा दाखला","तहसिलदार यांचा ३ वर्ष उत्पन्न दाखला","८अ व ७/१२ उतारे","तलाठी रहिवाशी दाखला","रेशन कार्ड","आधार कार्ड","पासपोर्ट साईज २ फोटो","मोबाईल नंबर"] },
+
+  { category:"विवाह व नोंदणी सेवा", name:"विवाह नोंदणी", docs:["वर व वधू यांचे प्रत्येकी ३ पासपोर्ट साईज फोटो","दोघांचे आधार कार्ड","दोघांचे शाळा सोडल्याचे दाखले (Leaving Certificate)","३ साक्षीदार व त्यांचे पासपोर्ट साईज फोटो","साक्षीदारांचे आधार कार्ड झेरॉक्स","लग्नपत्रिका","पंडित / ब्राह्मण यांचा फोटो व स्वाक्षरी","आधार कार्ड झेरॉक्स प्रत","स्टॅम्प पेपरवरील प्रतिज्ञापत्र (Affidavit)"] },
+  { category:"विवाह व नोंदणी सेवा", name:"नाव बदल गॅझेट", docs:["विहित नमुन्यातील अर्ज","आधार कार्ड","जुने व नवीन नावाचा पुरावा","स्टॅम्प पेपरवरील प्रतिज्ञापत्र","वर्तमानपत्रातील जाहिरात प्रत","पासपोर्ट साईज फोटो"] },
+  { category:"विवाह व नोंदणी सेवा", name:"वारस नोंद", docs:["मृत्यू दाखला","सर्व वारसांचे आधार कार्ड","रेशन कार्ड","७/१२ व फेरफार उतारा (जमीन असल्यास)","वारस हक्काबाबत प्रतिज्ञापत्र","रहिवासी दाखला"] },
+
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"आधार सेवा (नवीन नोंदणी / सुधारणा)", docs:["जन्म दाखला किंवा शाळेचा दाखला (नवीन नोंदणीसाठी)","पालकांचे आधार कार्ड (लहान मुलांसाठी)","पत्त्याचा पुरावा (रेशन कार्ड / वीज बिल)","मोबाईल नंबर","पासपोर्ट साईज फोटो"] },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"PAN कार्ड (नवीन / सुधारणा)", docs:["आधार कार्ड","पासपोर्ट साईज फोटो","स्वाक्षरीचा नमुना","पत्त्याचा पुरावा","मोबाईल नंबर व ईमेल आयडी"] },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"सातबारा उतारा (७/१२, ८-अ, फेरफार)", docs:[], note:"गाव, गट नंबर व मालकाचे नाव सांगितल्यास काही मिनिटांत ऑनलाईन उतारा काढून मिळतो." },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"रेशन कार्ड (नवीन / सुधारणा / नाव जोड)", docs:["कुटुंबातील सर्वांचे आधार कार्ड","रहिवासी दाखला","उत्पन्न दाखला","कुटुंबप्रमुखाचा फोटो","गॅस जोडणी पुरावा (असल्यास)"] },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"जन्म नोंदणी प्रमाणपत्र", docs:["रुग्णालयाचा जन्म दाखला","पालकांचे आधार कार्ड","रेशन कार्ड","विवाह नोंदणी दाखला (आवश्यक असल्यास)"] },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"मृत्यू नोंदणी प्रमाणपत्र", docs:["रुग्णालयाचा मृत्यू दाखला","मृत व्यक्तीचे आधार कार्ड","कुटुंबातील सदस्याचे आधार कार्ड","रेशन कार्ड"] },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"मतदार नोंदणी (नवीन / सुधारणा)", docs:["आधार कार्ड","पासपोर्ट साईज फोटो","वयाचा पुरावा","रहिवासी पुरावा"] },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"वाहन परवाना / RC संबंधित कामे", docs:["आधार कार्ड","पासपोर्ट साईज फोटो","वयाचा पुरावा","वाहनाची मूळ कागदपत्रे (RC हस्तांतरणासाठी)"] },
+  { category:"ओळखपत्र व इतर शासकीय नोंदी", name:"मालमत्ता नोंदणी", docs:["विक्री करारनामा","७/१२ किंवा मालमत्ता पत्रक","दोन्ही पक्षांचे आधार कार्ड","पासपोर्ट साईज फोटो","स्टॅम्प ड्युटी भरल्याची पावती"] },
+
+  { category:"समाज कल्याण योजना व इतर सेवा", name:"पोलीस पडताळणी (Police Verification)", docs:["आधार कार्ड","रहिवासी दाखला","पासपोर्ट साईज फोटो","अर्जाचे कारण दर्शवणारे कागदपत्र (उदा. नोकरी / पासपोर्ट)"] },
+  { category:"समाज कल्याण योजना व इतर सेवा", name:"श्रावणबाळ योजना", docs:["आधार कार्ड","वयाचा दाखला","उत्पन्न दाखला","रहिवासी दाखला","बँक पासबुक झेरॉक्स","पासपोर्ट साईज फोटो"] },
+  { category:"समाज कल्याण योजना व इतर सेवा", name:"संजय गांधी निराधार योजना", docs:["आधार कार्ड","वयाचा / जन्म दाखला","उत्पन्न दाखला","रहिवासी दाखला","बँक पासबुक झेरॉक्स","पासपोर्ट साईज फोटो","अपंगत्व दाखला (लागू असल्यास)"] },
+  { category:"समाज कल्याण योजना व इतर सेवा", name:"जिल्हा परिषद व पंचायत समितीच्या योजनांचे अर्ज", docs:[], note:"जिल्हा परिषद व पंचायत समितीच्या सर्व प्रकारच्या योजनांचे अर्ज केंद्रावर उपलब्ध आहेत. योजनेनुसार लागणारी कागदपत्रे वेगवेगळी असल्याने केंद्रावर प्रत्यक्ष चौकशी करा." },
+  { category:"समाज कल्याण योजना व इतर सेवा", name:"जीवन प्रमाण (Life Certificate)", docs:["आधार कार्ड","पेन्शन पेमेंट ऑर्डर (PPO) क्रमांक","बँक खाते तपशील","आधार-लिंक मोबाईल नंबर"] }
+];
+
+/* ---------------- Banking / CSC financial services ---------------- */
+const BANK_ITEMS = [
+  { mark:"CB", name:"सेंट्रल बँक बीसी पॉईंट", items:["रक्कम जमा करणे (Deposit)","रक्कम काढणे (Cash Withdrawal)","नवीन खाते उघडणे"] },
+  { mark:"IP", name:"इंडिया पोस्ट पेमेंट बँक बीसी पॉईंट", items:["रक्कम जमा करणे (Deposit)","रक्कम काढणे (Cash Withdrawal)","नवीन खाते उघडणे"] },
+  { mark:"₹", name:"सर्व बँकांमधून पैसे काढण्याची सुविधा", items:["कोणत्याही बँकेच्या खात्यातून रोख रक्कम काढता येते","आधार व मोबाईल नंबर सोबत आणावा"] },
+  { mark:"AT", name:"AEPS — आधार ATM", desc:"आधार कार्ड वापरून बँक खात्यातून रोख काढणे — कोणत्याही बँकेचे खाते चालते." },
+  { mark:"खा", name:"बँक खाते उघडणे", desc:"जनधन, राष्ट्रीयीकृत बँक व पोस्ट ऑफिस — शून्य शिल्लकीचे खाते उघडण्यासाठी मदत." },
+  { mark:"वि", name:"विमा व पेन्शन सेवा", desc:"PM जीवन ज्योती विमा, PM सुरक्षा विमा व अटल पेन्शन योजना — नोंदणी व हप्ता व्यवस्थापन." },
+  { mark:"₹P", name:"FASTag व डिजिटल पेमेंट", desc:"FASTag नोंदणी/रिचार्ज, मोबाईल रिचार्ज, वीज बिल, DTH, गॅस बुकिंग — एकाच ठिकाणी." }
+];
+
+/* ---------------- Office facilities ---------------- */
+const FACILITY_ITEMS = [
+  { name:"झेरॉक्स सेवा", desc:"कलर व ब्लॅक-अँड-व्हाईट झेरॉक्स दोन्ही उपलब्ध.", icon:'<rect x="6" y="2" width="12" height="20" rx="1"/><path d="M9 6h6M9 10h6M9 14h4"/>' },
+  { name:"अर्ज लेखन व टायपिंग", desc:"कोणताही अर्ज किंवा कागदपत्र लिहून / टाईप करून दिले जाते.", icon:'<path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/>' },
+  { name:"शासकीय योजना फॉर्म भरणे", desc:"सर्व प्रकारच्या शासकीय योजनांचे अर्ज ऑनलाईन भरून दिले जातात.", icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' },
+  { name:"शासकीय नोकर भरती अर्ज", desc:"शासकीय नोकर भरतीचे ऑनलाईन अर्ज व फॉर्म भरून दिले जातात.", icon:'<path d="M20 6L9 17l-5-5"/>' },
+  { name:"प्रतिज्ञापत्र व अ‍ॅफिडेव्हिट", desc:"सर्व प्रकारचे प्रतिज्ञापत्र, संमतीपत्र व हमीपत्र तयार करून दिले जातात.", icon:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/>' },
+  { name:"स्कॅनिंग सेवा", desc:"कागदपत्रे स्कॅन करून PDF/JPG मध्ये जतन करणे — ईमेल किंवा WhatsApp वर पाठवणे.", icon:'<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>' },
+  { name:"फोटो प्रिंट", desc:"पासपोर्ट साईज फोटो, ID साठी फोटो — त्वरित प्रिंट उपलब्ध.", icon:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>' },
+  { name:"ई-मेल / इंटरनेट सेवा", desc:"ई-मेल पाठवणे, ऑनलाईन अर्ज, नोकरी अर्ज — इंटरनेट सेवा उपलब्ध.", icon:'<path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/>' },
+  { name:"ऑनलाईन परीक्षा अर्ज", desc:"MPSC, UPSC, बँक, रेल्वे, पोलीस — सर्व स्पर्धा परीक्षांचे ऑनलाईन अर्ज भरणे.", icon:'<path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/>' },
+  { name:"Passport अर्ज", desc:"नवीन Passport अर्ज, नूतनीकरण, Tatkal अर्ज — ऑनलाईन नोंदणी मदत.", icon:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"/>' }
+];
+
+/* ---------------- State ---------------- */
+let schemes = [];
+let activeSlide = 0;
+let carouselTimer = null;
+let activeCategory = "सर्व";
+
+/* ---------------- Storage helpers ---------------- */
+async function loadSchemes(){
+  try{
+    const res = await window.storage.get(STORAGE_KEY, true);
+    schemes = (res && res.value) ? JSON.parse(res.value) : DEFAULT_SCHEMES;
+  } catch(e){
+    schemes = DEFAULT_SCHEMES;
+  }
+  renderCarousel();
+  renderAdminList();
+}
+async function saveSchemes(){
+  try{
+    await window.storage.set(STORAGE_KEY, JSON.stringify(schemes), true);
+    return true;
+  } catch(e){ return false; }
+}
+
+/* ---------------- Carousel ---------------- */
+function renderCarousel(){
+  const track = document.getElementById('carouselTrack');
+  const dotsWrap = document.getElementById('carouselDots');
+  const active = schemes.filter(s => s.active);
+  track.innerHTML = '';
+  dotsWrap.innerHTML = '';
+
+  if(active.length === 0){
+    track.innerHTML = '<div class="scheme-slide active"><h3>सध्या कोणतीही सक्रिय योजना नाही</h3><p>नवीन योजना जाहीर झाल्यास येथे दिसेल.</p></div>';
+    return;
+  }
+
+  active.forEach((s, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'scheme-slide' + (i === 0 ? ' active' : '');
+    slide.innerHTML = `
+      <div class="scheme-top">
+        ${s.tag ? `<span class="scheme-tag${s.tag.includes('नवीन') ? ' new' : ''}">${escapeHtml(s.tag)}</span>` : ''}
+        ${s.date ? `<span class="scheme-date">${escapeHtml(s.date)}</span>` : ''}
+      </div>
+      <h3>${escapeHtml(s.title)}</h3>
+      <p>${escapeHtml(s.desc || '')}</p>
+    `;
+    track.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', 'योजना ' + (i+1));
+    if(i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  activeSlide = 0;
+  restartAutoplay(active.length);
+}
+function goToSlide(i){
+  const slides = document.querySelectorAll('.scheme-slide');
+  const dots = document.querySelectorAll('.carousel-dots button');
+  if(slides.length === 0) return;
+  slides[activeSlide]?.classList.remove('active');
+  dots[activeSlide]?.classList.remove('active');
+  activeSlide = (i + slides.length) % slides.length;
+  slides[activeSlide].classList.add('active');
+  dots[activeSlide]?.classList.add('active');
+}
+function restartAutoplay(count){
+  if(carouselTimer) clearInterval(carouselTimer);
+  if(count <= 1) return;
+  carouselTimer = setInterval(() => goToSlide(activeSlide + 1), 5000);
+}
+document.getElementById('nextBtn').addEventListener('click', () => { goToSlide(activeSlide + 1); restartAutoplay(document.querySelectorAll('.scheme-slide').length); });
+document.getElementById('prevBtn').addEventListener('click', () => { goToSlide(activeSlide - 1); restartAutoplay(document.querySelectorAll('.scheme-slide').length); });
+const carouselEl = document.getElementById('carousel');
+carouselEl.addEventListener('mouseenter', () => { if(carouselTimer) clearInterval(carouselTimer); });
+carouselEl.addEventListener('mouseleave', () => restartAutoplay(document.querySelectorAll('.scheme-slide').length));
+
+/* ---------------- Services rendering ---------------- */
+function escapeHtml(str){
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+function getCategories(){
+  return ["सर्व", ...new Set(SERVICES.map(s => s.category))];
+}
+function renderChips(){
+  const wrap = document.getElementById('categoryChips');
+  wrap.innerHTML = '';
+  getCategories().forEach(cat => {
+    const chip = document.createElement('button');
+    chip.className = 'chip' + (cat === activeCategory ? ' active' : '');
+    chip.textContent = cat;
+    chip.addEventListener('click', () => { activeCategory = cat; renderChips(); renderServices(); });
+    wrap.appendChild(chip);
+  });
+}
+function renderServices(){
+  const container = document.getElementById('serviceCategories');
+  const noResults = document.getElementById('noResults');
+  const query = document.getElementById('serviceSearch').value.trim().toLowerCase();
+
+  const filtered = SERVICES.filter(s => {
+    const matchesCategory = activeCategory === "सर्व" || s.category === activeCategory;
+    const matchesQuery = !query || s.name.toLowerCase().includes(query) || s.category.toLowerCase().includes(query);
+    return matchesCategory && matchesQuery;
+  });
+
+  container.innerHTML = '';
+  if(filtered.length === 0){ noResults.style.display = 'block'; return; }
+  noResults.style.display = 'none';
+
+  const grouped = {};
+  filtered.forEach(s => { (grouped[s.category] = grouped[s.category] || []).push(s); });
+
+  Object.keys(grouped).forEach(cat => {
+    const block = document.createElement('div');
+    block.className = 'cat-block';
+    const heading = document.createElement('h3');
+    heading.textContent = cat;
+    block.appendChild(heading);
+
+    grouped[cat].forEach((service, idx) => {
+      const card = document.createElement('details');
+      card.className = 'service-card';
+      const docsHtml = service.docs && service.docs.length
+        ? `<ul class="doc-list">${service.docs.map(d => `
+            <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>${escapeHtml(d)}</span></li>
+          `).join('')}</ul>`
+        : `<p class="service-note">${escapeHtml(service.note || 'कागदपत्रांच्या माहितीसाठी केंद्रावर संपर्क साधा.')}</p>`;
+      card.innerHTML = `
+        <summary class="service-summary">
+          <span class="service-summary-left">
+            <span class="service-index">${idx+1}</span>
+            <span class="service-name">${escapeHtml(service.name)}</span>
+          </span>
+          <span style="display:flex;align-items:center;gap:10px;">
+            <span class="doc-count">${service.docs && service.docs.length ? service.docs.length + ' कागदपत्रे' : 'चौकशी करा'}</span>
+            <svg class="icon chevron" width="18" height="18" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="service-body">${docsHtml}${waButton(service.name)}</div>
+      `;
+      block.appendChild(card);
+    });
+    container.appendChild(block);
+  });
+}
+document.getElementById('serviceSearch').addEventListener('input', renderServices);
+
+/* ---------------- Banking grid ---------------- */
+function renderBankGrid(){
+  const wrap = document.getElementById('bankGrid');
+  wrap.innerHTML = BANK_ITEMS.map(b => `
+    <div class="bank-card">
+      <div class="bank-top"><div class="bank-mark">${escapeHtml(b.mark)}</div><h4>${escapeHtml(b.name)}</h4></div>
+      ${b.items ? `<ul class="bank-list">${b.items.map(i => `<li>${escapeHtml(i)}</li>`).join('')}</ul>` : `<p class="bank-desc">${escapeHtml(b.desc)}</p>`}
+      ${waButton(b.name)}
+    </div>
+  `).join('');
+}
+
+/* ---------------- Facility grid ---------------- */
+function renderFacilityGrid(){
+  const wrap = document.getElementById('facilityGrid');
+  wrap.innerHTML = FACILITY_ITEMS.map(f => `
+    <div class="facility-card">
+      <div class="facility-icon"><svg class="icon" viewBox="0 0 24 24">${f.icon}</svg></div>
+      <h4>${escapeHtml(f.name)}</h4>
+      <p>${escapeHtml(f.desc)}</p>
+      ${waButton(f.name)}
+    </div>
+  `).join('');
+}
+
+/* ---------------- Admin panel ---------------- */
+const overlay = document.getElementById('adminOverlay');
+const loginPane = document.getElementById('loginPane');
+const adminPane = document.getElementById('adminPane');
+
+document.getElementById('openAdmin').addEventListener('click', () => overlay.classList.add('open'));
+document.getElementById('closeAdmin').addEventListener('click', () => overlay.classList.remove('open'));
+overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.classList.remove('open'); });
+
+document.getElementById('loginBtn').addEventListener('click', () => {
+  const val = document.getElementById('adminPass').value;
+  const msg = document.getElementById('loginMsg');
+  if(val === ADMIN_PASSWORD){
+    loginPane.style.display = 'none';
+    adminPane.style.display = 'block';
+    document.getElementById('adminModalTitle').textContent = 'योजना व्यवस्थापन';
+    msg.innerHTML = '';
+  } else {
+    msg.innerHTML = '<div class="status-msg err">पासवर्ड चुकीचा आहे. पुन्हा प्रयत्न करा.</div>';
+  }
+});
+
+function resetForm(){
+  document.getElementById('editId').value = '';
+  document.getElementById('schemeTitle').value = '';
+  document.getElementById('schemeDesc').value = '';
+  document.getElementById('schemeTagText').value = '';
+  document.getElementById('schemeActive').checked = true;
+  document.getElementById('saveSchemeBtn').textContent = 'योजना जतन करा';
+}
+document.getElementById('clearFormBtn').addEventListener('click', resetForm);
+
+document.getElementById('schemeForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const id = document.getElementById('editId').value;
+  const title = document.getElementById('schemeTitle').value.trim();
+  const desc = document.getElementById('schemeDesc').value.trim();
+  const tag = document.getElementById('schemeTagText').value.trim();
+  const active = document.getElementById('schemeActive').checked;
+  const saveMsg = document.getElementById('saveMsg');
+
+  if(!title){
+    saveMsg.innerHTML = '<div class="status-msg err">कृपया योजनेचे नाव टाका.</div>';
+    return;
+  }
+  const today = new Date().toLocaleDateString('mr-IN', { day:'numeric', month:'short', year:'numeric' });
+
+  if(id){
+    const idx = schemes.findIndex(s => s.id === id);
+    if(idx > -1) schemes[idx] = { ...schemes[idx], title, desc, tag, active };
+  } else {
+    schemes.unshift({ id:'s' + Date.now(), title, desc, tag, active, date: today });
+  }
+
+  const ok = await saveSchemes();
+  saveMsg.innerHTML = ok
+    ? '<div class="status-msg ok">जतन झाले. होम पेजवर अद्ययावत झाले आहे.</div>'
+    : '<div class="status-msg err">जतन करताना अडचण आली, पुन्हा प्रयत्न करा.</div>';
+
+  resetForm();
+  renderCarousel();
+  renderAdminList();
+});
+
+function renderAdminList(){
+  const wrap = document.getElementById('adminSchemeList');
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  if(schemes.length === 0){
+    wrap.innerHTML = '<p style="font-size:14px;color:var(--ink-soft);">अजून कोणतीही योजना जोडलेली नाही.</p>';
+    return;
+  }
+  schemes.forEach(s => {
+    const row = document.createElement('div');
+    row.className = 'admin-scheme-row';
+    row.innerHTML = `
+      <div class="info">
+        <b>${escapeHtml(s.title)}</b>
+        ${s.active ? '<span style="color:var(--leaf-dark);">सक्रिय</span>' : '<span style="color:var(--ink-soft);">लपवलेली</span>'}
+      </div>
+      <div class="actions">
+        <button class="btn btn-ghost" data-edit="${s.id}">संपादन</button>
+        <button class="btn btn-danger" data-delete="${s.id}">काढा</button>
+      </div>
+    `;
+    wrap.appendChild(row);
+  });
+
+  wrap.querySelectorAll('[data-edit]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const s = schemes.find(x => x.id === btn.dataset.edit);
+      if(!s) return;
+      document.getElementById('editId').value = s.id;
+      document.getElementById('schemeTitle').value = s.title;
+      document.getElementById('schemeDesc').value = s.desc || '';
+      document.getElementById('schemeTagText').value = s.tag || '';
+      document.getElementById('schemeActive').checked = !!s.active;
+      document.getElementById('saveSchemeBtn').textContent = 'बदल जतन करा';
+      document.getElementById('adminPane').scrollTop = 0;
+    });
+  });
+  wrap.querySelectorAll('[data-delete]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      if(!confirm('ही योजना कायमची काढायची आहे का?')) return;
+      schemes = schemes.filter(x => x.id !== btn.dataset.delete);
+      await saveSchemes();
+      renderCarousel();
+      renderAdminList();
+    });
+  });
+}
+
+/* ---------------- Scroll reveal ---------------- */
+function initReveal(){
+  const targets = document.querySelectorAll('.reveal, .reveal-stagger');
+  if(!('IntersectionObserver' in window)){
+    targets.forEach(t => t.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(t => io.observe(t));
+}
+
+/* ---------------- Stat counters ---------------- */
+function initCounters(){
+  const nums = document.querySelectorAll('.stat .num');
+  let done = false;
+  const run = () => {
+    if(done) return;
+    done = true;
+    nums.forEach(el => {
+      const target = parseInt(el.dataset.count, 10) || 0;
+      const duration = 900;
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min((now - start) / duration, 1);
+        el.textContent = Math.round(p * target);
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  };
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ run(); io.disconnect(); } });
+    }, { threshold: 0.5 });
+    io.observe(document.querySelector('.stats-strip'));
+  } else { run(); }
+}
+
+/* ---------------- Init ---------------- */
+renderChips();
+renderServices();
+renderBankGrid();
+renderFacilityGrid();
+loadSchemes();
+initReveal();
+initCounters();
+</script>
 </body>
 </html>
