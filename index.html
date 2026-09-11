@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>सेतू कार्यालय शिबलापूर | शासकीय दाखले, योजना व सुविधा</title>
-<link rel="icon" type="image/png" href="/assets/maha-eseva-logo.png">
-<link rel="shortcut icon" type="image/png" href="/assets/maha-eseva-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -175,17 +173,47 @@
     padding:24px 0 0;
     overflow:hidden;
   }
-  .hero::before{
-    content:"";position:absolute;top:-140px;right:-120px;width:420px;height:420px;border-radius:50%;
-    background:radial-gradient(circle, rgba(222,138,60,0.22) 0%, rgba(222,138,60,0) 70%);
-    pointer-events:none;
-  }
-  .hero::after{
-    content:"";position:absolute;top:60px;left:-160px;width:320px;height:320px;border-radius:50%;
-    background:radial-gradient(circle, rgba(124,217,168,0.16) 0%, rgba(124,217,168,0) 70%);
-    pointer-events:none;
-  }
+  .hero-blob{position:absolute;border-radius:50%;pointer-events:none;will-change:transform;}
+  .hero-blob-1{top:-140px;right:-120px;width:420px;height:420px;background:radial-gradient(circle, rgba(222,138,60,0.22) 0%, rgba(222,138,60,0) 70%);}
+  .hero-blob-2{top:60px;left:-160px;width:320px;height:320px;background:radial-gradient(circle, rgba(124,217,168,0.16) 0%, rgba(124,217,168,0) 70%);}
   .hero .wrap{position:relative;z-index:1;}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:0;}
+  @media (min-width:900px){
+    .hero-grid{grid-template-columns:1.25fr 1fr;gap:28px;align-items:center;}
+  }
+
+  /* ---------- Hero visual (orbiting icon cluster) ---------- */
+  .hero-visual{display:none;position:relative;height:320px;will-change:transform;}
+  @media (min-width:900px){ .hero-visual{display:block;} }
+  .hero-visual-glow{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:230px;height:230px;border-radius:50%;
+    background:radial-gradient(circle, rgba(222,138,60,0.38) 0%, rgba(222,138,60,0) 70%);
+    animation:glow-pulse 3s ease-in-out infinite;
+  }
+  .hero-visual-core{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:118px;height:118px;border-radius:28px;
+    background:linear-gradient(150deg,var(--saffron),var(--saffron-dark));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 22px 50px rgba(222,138,60,0.45);
+    animation:core-float 5s ease-in-out infinite;
+  }
+  .hero-visual-core svg{width:54px;height:54px;color:#fff;}
+  @keyframes core-float{0%,100%{transform:translate(-50%,-50%) translateY(0) rotate(0deg);}50%{transform:translate(-50%,-50%) translateY(-10px) rotate(-2deg);}}
+  @keyframes glow-pulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08);}}
+  .orbit-chip{
+    position:absolute;width:58px;height:58px;border-radius:16px;
+    background:#fff;box-shadow:0 10px 26px rgba(10,59,55,0.28);
+    display:flex;align-items:center;justify-content:center;
+    animation:orbit-float 4.6s ease-in-out infinite;
+  }
+  .orbit-chip svg{width:26px;height:26px;color:var(--teal);}
+  .orbit-chip.c1{top:4%;left:6%;animation-delay:0s;}
+  .orbit-chip.c2{top:12%;right:2%;animation-delay:.8s;color:var(--saffron-dark);}
+  .orbit-chip.c3{bottom:10%;left:0%;animation-delay:1.6s;}
+  .orbit-chip.c4{bottom:2%;right:16%;animation-delay:2.4s;}
+  @keyframes orbit-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
 
   .trust-bar{
     display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;
@@ -193,7 +221,8 @@
     padding:10px 18px;margin-bottom:20px;box-shadow:0 6px 18px rgba(10,59,55,0.25);
     animation:fadeUp .6s ease both;
   }
-  .trust-item{display:flex;align-items:center;gap:9px;}
+  .trust-item{display:flex;align-items:center;gap:9px;transition:transform .2s ease;}
+  .trust-item:hover{transform:translateY(-2px);}
   .trust-item img{height:34px;width:auto;display:block;}
   .trust-item span{font-size:13px;font-weight:700;color:var(--teal-dark);line-height:1.25;max-width:120px;}
   .trust-divider{width:1px;align-self:stretch;background:var(--line-strong);min-height:28px;}
@@ -265,8 +294,8 @@
     border-right:1px solid rgba(255,255,255,0.18);
   }
   .stat:last-child{border-right:none;}
-  .stat .num{color:#1c1a1a;font-family:var(--font-display);font-size:26px;display:block;}
-  .stat .lbl{color:##1c1e1e;font-size:12.5px;margin-top:2px;}
+  .stat .num{color:#fff;font-family:var(--font-display);font-size:26px;display:block;}
+  .stat .lbl{color:#BFDAD5;font-size:12.5px;margin-top:2px;}
 
   /* ---------- Section shell ---------- */
   section{padding:44px 0;}
@@ -274,7 +303,11 @@
   .section-head .kicker{
     color:var(--saffron-dark);font-weight:700;font-size:14px;margin:0 0 4px;
   }
-  .section-head h2{font-size:26px;}
+  .section-head h2{font-size:26px;position:relative;display:inline-block;padding-bottom:11px;}
+  .section-head h2::after{
+    content:"";position:absolute;left:0;bottom:0;width:48px;height:4px;border-radius:3px;
+    background:linear-gradient(90deg,var(--saffron),var(--leaf));
+  }
   .section-head p{color:var(--ink-soft);margin:8px 0 0;font-size:15.5px;}
 
   /* ---------- Services ---------- */
@@ -346,7 +379,9 @@
     width:44px;height:44px;border-radius:10px;
     display:flex;align-items:center;justify-content:center;
     background:rgba(14,79,74,0.08);color:var(--teal);
+    transition:transform .25s ease;
   }
+  .facility-card:hover .facility-icon{transform:scale(1.1) rotate(-4deg);}
   .facility-card:nth-child(3n+2) .facility-icon{background:rgba(222,138,60,0.12);color:var(--saffron-dark);}
   .facility-card:nth-child(3n+3) .facility-icon{background:rgba(122,74,110,0.10);color:var(--plum);}
   .facility-card h4{font-size:16.5px;font-weight:600;color:var(--ink);font-family:var(--font-body);}
@@ -364,7 +399,9 @@
   .bank-mark{
     width:38px;height:38px;border-radius:8px;background:var(--teal);color:#fff;
     display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:17px;flex-shrink:0;
+    transition:transform .25s ease;
   }
+  .bank-card:hover .bank-mark{transform:scale(1.1);}
   .bank-card h4{font-size:16.5px;font-family:var(--font-body);font-weight:700;color:var(--ink);}
   .bank-list{margin:0;padding-left:20px;font-size:14.5px;color:var(--ink-soft);display:grid;gap:4px;flex:1;}
   .bank-card p.bank-desc{margin:0;font-size:14.5px;color:var(--ink-soft);flex:1;}
@@ -486,7 +523,7 @@
     .trust-bar{padding:8px 14px;gap:12px;}
     .trust-item img{height:26px;}
     .trust-item span{font-size:11.5px;max-width:100px;}
-    .hero::before,.hero::after{display:none;}
+    .hero-blob{display:none;}
     .call-btn span.txt{display:none;}
   }
 </style>
@@ -522,7 +559,11 @@
 </header>
 
 <section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
   <div class="wrap">
+    <div class="hero-grid">
+    <div class="hero-content">
     <div class="trust-bar">
       <div class="trust-item">
         <img src="assets/maha-eseva-logo.png" alt="महा ई-सेवा केंद्र">
@@ -557,6 +598,27 @@
       <div class="stat"><span class="num" data-count="30">0</span><span class="lbl">प्रकारचे दाखले व प्रमाणपत्र</span></div>
       <div class="stat"><span class="num" data-count="7">0</span><span class="lbl">बँकिंग व CSC सुविधा</span></div>
       <div class="stat"><span class="num" data-count="10">0</span><span class="lbl">कार्यालयीन सुविधा</span></div>
+    </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <div class="hero-visual-glow"></div>
+      <div class="hero-visual-core">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg>
+      </div>
+      <div class="orbit-chip c1" title="आधार">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z"/><path d="M6 10v2a6 6 0 0 0 12 0v-2M12 18v4"/></svg>
+      </div>
+      <div class="orbit-chip c2" title="बँकिंग">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M4 10v9h16v-9M9 21v-6h6v6"/></svg>
+      </div>
+      <div class="orbit-chip c3" title="कुटुंब">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="18" cy="8" r="2.2"/><path d="M16.5 21v-1.6a3.4 3.4 0 0 1 3.4-3.4h.2a3.4 3.4 0 0 1 3.4 3.4V21"/></svg>
+      </div>
+      <div class="orbit-chip c4" title="जमीन">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+      </div>
+    </div>
     </div>
   </div>
 </section>
@@ -695,7 +757,8 @@
     <p>© सेतू कार्यालय शिबलापूर, संगमनेर — सर्व माहिती केवळ सामान्य मार्गदर्शनासाठी. अंतिम पडताळणीसाठी केंद्रावर संपर्क साधा.</p>
     <p style="font-size:12px;">जय हिंद 🇮🇳 — नागरिकांची सेवा हीच आमची उपासना</p>
     <div class="visit-count" id="visitCount">
-      <img src="https://visitor-badge.laobi.icu/badge?page_id=setu-karyalay-shiblapur&left_text=एकूण%20भेटी" alt="एकूण भेटी" style="height:20px;border-radius:4px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span id="visitCountText">भेटींची मोजणी होत आहे…</span>
     </div>
     <button class="admin-link" id="openAdmin">प्रशासक प्रवेश</button>
   </div>
@@ -1175,6 +1238,40 @@ function initCounters(){
   } else { run(); }
 }
 
+/* ---------------- Visit counter (countapi.xyz — free, no backend needed) ---------------- */
+async function trackVisit(){
+  const el = document.getElementById('visitCountText');
+  if(!el) return;
+  try{
+    const res = await fetch('https://api.countapi.xyz/hit/setu-karyalay-shiblapur/visits', { cache: 'no-store' });
+    if(!res.ok) throw new Error('bad response');
+    const data = await res.json();
+    const count = (data && typeof data.value === 'number') ? data.value : null;
+    el.textContent = count !== null ? `एकूण भेटी: ${count.toLocaleString('mr-IN')}` : 'भेटींची मोजणी उपलब्ध नाही';
+  } catch(e){
+    el.textContent = 'भेटींची मोजणी उपलब्ध नाही';
+  }
+}
+
+/* ---------------- Parallax ---------------- */
+function initParallax(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const blob1 = document.querySelector('.hero-blob-1');
+  const blob2 = document.querySelector('.hero-blob-2');
+  const visual = document.getElementById('heroVisual');
+  let ticking = false;
+  function update(){
+    const y = window.scrollY;
+    if(blob1) blob1.style.transform = `translateY(${y * 0.15}px)`;
+    if(blob2) blob2.style.transform = `translateY(${y * 0.25}px)`;
+    if(visual) visual.style.transform = `translateY(${y * -0.08}px)`;
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, { passive:true });
+}
+
 /* ---------------- Init ---------------- */
 renderChips();
 renderServices();
@@ -1183,6 +1280,8 @@ renderFacilityGrid();
 loadSchemes();
 initReveal();
 initCounters();
+initParallax();
+trackVisit();
 </script>
 </body>
 </html>
