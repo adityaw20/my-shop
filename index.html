@@ -1238,16 +1238,16 @@ function initCounters(){
   } else { run(); }
 }
 
-/* ---------------- Visit counter (countapi.xyz — free, no backend needed) ---------------- */
+/* ---------------- Visit counter (countapi.mileshilliard.com — free, no backend needed) ---------------- */
 async function trackVisit(){
   const el = document.getElementById('visitCountText');
   if(!el) return;
   try{
-    const res = await fetch('https://api.countapi.xyz/hit/setu-karyalay-shiblapur/visits', { cache: 'no-store' });
+    const res = await fetch('https://countapi.mileshilliard.com/api/v1/hit/setu-karyalay-shiblapur-visits', { cache: 'no-store' });
     if(!res.ok) throw new Error('bad response');
     const data = await res.json();
-    const count = (data && typeof data.value === 'number') ? data.value : null;
-    el.textContent = count !== null ? `एकूण भेटी: ${count.toLocaleString('mr-IN')}` : 'भेटींची मोजणी उपलब्ध नाही';
+    const count = data && data.value !== undefined ? parseInt(data.value, 10) : null;
+    el.textContent = (count !== null && !isNaN(count)) ? `एकूण भेटी: ${count.toLocaleString('mr-IN')}` : 'भेटींची मोजणी उपलब्ध नाही';
   } catch(e){
     el.textContent = 'भेटींची मोजणी उपलब्ध नाही';
   }
